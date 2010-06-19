@@ -1,0 +1,31 @@
+<% if logged_in? %>
+	<h1>Chat Interface</h1>
+	<div class="chat-view" id="chat-view"></div>
+	<%= periodically_call_remote(:url => "update/#{current_user.id}", :frequency => '1', :update => 'chat-view') %>
+	<div id="chat_form">
+	<% form_remote_tag :url => {:action => 'create'} do	%>
+	<%= text_field "subject", "name" %>
+	<%= submit_tag 'Send' %>
+	<% end %>
+	</div>
+<% else %>
+	<h1>Log In</h1>
+	<div style="color: green;">
+	<%= flash[:notice] %>
+	</div>
+	<% form_tag session_path do -%>
+	<p><%= label_tag 'email' %><br />
+	<%= text_field_tag 'email', @login %></p>
+
+	<p><%= label_tag 'password' %><br/>
+	<%= password_field_tag 'password', nil %></p>
+
+	<!-- Uncomment this if you want this functionality
+	<p><%= label_tag 'remember_me', 'Remember me' %>
+	<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+	-->
+
+	<p><%= submit_tag 'Log in' %></p>
+	<% end -%>
+	
+<% end %>

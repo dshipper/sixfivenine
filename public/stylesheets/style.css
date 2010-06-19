@@ -1,0 +1,35 @@
+/*
+Theme Name: sixfivenine
+Theme URI: http://www.sixfivenine.com/
+Description: sixfivenine theme.
+Version: 1.0
+Author: Dan Shipper
+Author URI: http://www.conveniencesoftware.com
+*/
+html{
+	height: 100%;
+}
+body{
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif; 
+	height: 100%;
+	width: 100%;
+	position: relative;
+	right: 6px;	
+}
+
+img{
+	border: 0;	
+}
+a {
+	outline: none;	
+}
+a img{
+	border: none;	
+}
+
+.chat-view{
+	width: 500px;
+	height: 200px;
+	background-color: #d1d1d1;
+	
+}

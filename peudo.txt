@@ -1,0 +1,8 @@
+Logic flow for Chat System
+
+User presses find chat
+The system looks for a chat that is in "waiting" status
+If it finds one it sends back the chat id
+If it doesn't it creates a chat, puts it into waiting mode and then sends back the chat id
+The view pane checks the messages database every second for new messages with the chat id
+The send pane sends chats with the chat message when the user presses enter

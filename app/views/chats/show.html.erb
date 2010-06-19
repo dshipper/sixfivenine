@@ -1,0 +1,13 @@
+<p>
+  <b>Waiting:</b>
+  <%=h @chat.waiting %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @chat.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_chat_path(@chat) %> |
+<%= link_to 'Back', chats_path %>
