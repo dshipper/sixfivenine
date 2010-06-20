@@ -4,6 +4,6 @@ class AddForeignToUser < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :users, :chat_id
+    remove_column :users, :chat_id, :limit => 100, :default => '', :null => true
   end
 end

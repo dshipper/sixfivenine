@@ -1,13 +1,13 @@
 <% if logged_in? %>
-	<h1>Chat Interface</h1>
-	<div class="chat-view" id="chat-view"></div>
-	<%= periodically_call_remote(:url => "update/#{current_user.id}", :frequency => '1', :update => 'chat-view') %>
-	<div id="chat_form">
-	<% form_remote_tag :url => {:action => 'create'} do	%>
-	<%= text_field "subject", "name" %>
-	<%= submit_tag 'Send' %>
-	<% end %>
+	<h1>Chat Interface</h1>	
+	<%= form_remote_tag (:update => "ajax-container", 
+						:url => {:controller => "chats", :action => "initiate_chat"},
+						:position => "top" )	%>
+	<div id="ajax-container">
+	
 	</div>
+	<%= submit_tag "Test" %>
+	
 <% else %>
 	<h1>Log In</h1>
 	<div style="color: green;">

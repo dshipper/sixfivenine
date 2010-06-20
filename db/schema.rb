@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100619205417) do
+ActiveRecord::Schema.define(:version => 20100620070414) do
 
   create_table "chats", :force => true do |t|
     t.boolean  "waiting"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(:version => 20100619205417) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "chat_id"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name",                      :limit => 100, :default => ""
     t.string   "email",                     :limit => 100
     t.string   "crypted_password",          :limit => 40
     t.string   "salt",                      :limit => 40
