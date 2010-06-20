@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100620070414) do
+ActiveRecord::Schema.define(:version => 20100620073922) do
 
   create_table "chats", :force => true do |t|
     t.boolean  "waiting"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20100620070414) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "chat_id"
+    t.boolean  "system",     :default => false
   end
 
   create_table "users", :force => true do |t|

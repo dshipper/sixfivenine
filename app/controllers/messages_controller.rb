@@ -44,9 +44,10 @@ class MessagesController < ApplicationController
   end
   
   def create_new
-    @message = Message.new :chat_id => params[:chat_id], :user_id => params[:user_id], :body => params[:body]
+    @message = Message.new :chat_id => params[:chat_id], :user_id => params[:user_id], :body => params[:body], :system => false
     @message.save
   end
+  
   def get
     @messages = Message.find(:all, :conditions => {:chat_id => params[:id]})
   end

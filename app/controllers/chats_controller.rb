@@ -21,12 +21,16 @@ class ChatsController < ApplicationController
       @chat.waiting = false
       @chat.save
       current_user.chat_id = @chat.id
+      m = Message.new :body => "#{current_user.first_name} has joined the chat.", :user_id => current_user.id, :chat_id => current_user.chat_id, :system => true
+      m.save
     else 
       #then we have to create a new chat
       @chat = Chat.new
       @chat.waiting = true 
       @chat.save
       current_user.chat_id = @chat.id
+      m = Message.new :body => "#{current_user.first_name} has joined the chat.", :user_id => current_user.id, :chat_id => current_user.chat_id, :system => true
+      m.save
     end
   end
   

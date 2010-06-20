@@ -1,6 +1,12 @@
 <% for message in @messages %>
 	<% @user = User.find_by_id message.user_id %>
-	<%= "#{@user.first_name}: " %>
+	<% if !message.system? %>	
+		<%= "#{@user.first_name}: " %>
+	<% else %>
+		<% #if (String.new(message.body).starts_with? current_user.first_name) %>
+			<% #message.body = String.new(message.body).sub "#{current_user.first_name} has", "You have" %>
+		<% #end %> 
+	<% end %>
 	<%= message.body %>
 	<br>
 <% end %>
