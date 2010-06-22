@@ -1,5 +1,5 @@
 <div class="chat-view" id="chat-view"></div>
-<%= periodically_call_remote(:url => "messages/get/#{current_user.chat_id}", :frequency => '2', :update => 'chat-view') %>
+<%= periodically_call_remote(:url => "messages/get/#{current_user.chat_id}", :frequency => '.5', :update => 'chat-view', :condition => "$('chatid').innerHTML == '#{current_user.chat_id}'" )%>
 <div id="chat_form">
 <% form_remote_tag :url => {:controller => "messages", :action => "create_new"} do	-%>
 <%= hidden_field_tag :user_id, current_user.id %>
@@ -8,5 +8,6 @@
 <%= submit_tag 'Send' %>
 <% end -%>
 </div>
+<div class="chatid" id="chatid" style="display: none;"><%= current_user.chat_id %></div>
 <div id="errors">
 </div>

@@ -1,12 +1,10 @@
 <% if logged_in? %>
 	<h1>Chat Interface</h1>	
-	<%= form_remote_tag (:update => "ajax-container", 
-						:url => {:controller => "chats", :action => "initiate_chat"},
-						:position => "top" )	%>
+	<%= link_to_remote "Chat", :update => "ajax-container", 
+						:url => {:controller => "chats", :action => "initiate_chat"}	%>
 	<div id="ajax-container">
 	
 	</div>
-	<%= submit_tag "Test" %>
 	
 <% else %>
 	<h1>Log In</h1>
