@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
+  @last_message = "BOB"
   def index
     @messages = Message.all
 
@@ -49,7 +50,11 @@ class MessagesController < ApplicationController
   end
   
   def get
-    @messages = Message.find(:all, :conditions => {:chat_id => params[:id]})
+    if @last_message
+      @messages = Message.find(:all, :conditions => {:chat_id => params[:id], :id_gt => @last_message })
+    else
+      @messages = Message.find(:all, :conditions => {:chat_id => params[:id]})
+    end
   end
 
 end

@@ -27,9 +27,138 @@ a img{
 	border: none;	
 }
 
+.content{
+	width: 900px;
+	margin: auto;
+}
+
+.profile-view-container{
+	width: 580px;
+	height: 391px;
+	border: none;
+	float: right;
+}
+
+.profile-view-top{
+	width: 115px;
+	height: 20px;
+	border-color: black;
+	border-top: solid 1px;
+	border-right: solid 1px;
+	border-left: solid 1px;
+	background-color: #0a61b1;
+	z-index: 2;
+	float: right;
+}
+
+.profile-view-top-super{
+	width: 582px;
+	height: 20px;
+}
+
+.profile-view-text{
+	color: white;
+	text-align: center;
+	font: 12px Helvetica;
+	position: relative;
+	top: 3px;
+}
+.profile-view{
+	width: 580px;
+	height: 371px;
+	border-top: solid 1px;
+	font: 18px Helvetica;
+}
+
+.chat-view-container{
+	width: 302px;
+	height: 371px;
+	border: none;
+}
+
+.chat-view-top{
+	height: 20px;
+	width: 115px;
+	border-color: black;
+	border-top: solid 1px;
+	border-right: solid 1px;
+	border-left: solid 1px;
+	background-color: #0a61b1;
+	float: right;
+}
+
+.chat-view-top-super{
+	height: 20px;
+	width: 302px;
+}
+
+.chat-view-text{
+	color: white;
+	text-align: center;
+	font: 12px Helvetica;
+	position: relative;
+	top: 3px;
+}
 .chat-view{
-	width: 500px;
-	height: 200px;
-	background-color: #d1d1d1;
-	
+	width: 300px;
+	height: 350px;
+	border: solid 1px;
+}
+.chat-box-div{
+	border: solid 1px;
+	border-top: none;
+	width: 255px;
+	height: 20px;
+	overflow: hidden;
+}
+.chat-box{
+	width: 255px;
+	border: none;
+	height: 20px;
+}	
+
+.send-div{
+	width: 45px;
+	height: 19px;
+	border: solid 1px;
+	border-left: none;
+	border-top: none;
+	position: relative;
+	left: 256px;
+	bottom: 20px;
+	overflow: hidden;
+}
+
+.send{
+	width: 45px;
+	height: 20px;
+	background-color: #0a61b1;
+	border-color: #ffffff;
+	font: 12px Helvetica;
+	color: white;
+	border: none;
+}
+
+.new-chat-div{
+	width: 90px;
+	height: 20px;
+	border: solid 1px;
+	border-bottom: none;
+	overflow: hidden;
+	background-color: red;
+	border-color: #000000;
+	font: 12px Helvetica;
+	color: white;
+	z-index: 2;
+	position: relative;
+	top: 20px;
+}
+
+.new-chat-div a{
+	color: white;
+	text-decoration: none;
+	font: 16px Helvetica;
+	position: relative;
+	left: 10px;
+	top: 2px;
 }

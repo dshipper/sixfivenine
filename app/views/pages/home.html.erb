@@ -1,7 +1,9 @@
 <% if logged_in? %>
-	<h1>Chat Interface</h1>	
-	<%= link_to_remote "Chat", :update => "ajax-container", 
-						:url => {:controller => "chats", :action => "initiate_chat"}	%>
+	<h1><div style="color: #0a61b1;">sixfivenine</div></h1>	
+	<div class="new-chat-div">
+	<%= link_to_remote "new chat", :update => "ajax-container", 
+						:url => {:controller => "chats", :action => "initiate_chat"} %>
+	</div>
 	<div id="ajax-container">
 	
 	</div>

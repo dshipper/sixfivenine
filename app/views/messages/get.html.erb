@@ -8,5 +8,7 @@
 		<% #end %> 
 	<% end %>
 	<%= message.body %>
+	<% @last_message = message.id %>
+	<%= @last_message %>
 	<br>
 <% end %>

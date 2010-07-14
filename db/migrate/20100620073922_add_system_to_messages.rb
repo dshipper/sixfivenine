@@ -1,6 +1,6 @@
 class AddSystemToMessages < ActiveRecord::Migration
   def self.up
-    add_column :messages, :system, :boolean, :default => "false"
+    add_column :messages, :system, :boolean
   end
 
   def self.down

@@ -1,13 +1,32 @@
+<div class="profile-view-container">
+<div class="profile-view-top-super">
+<div class="profile-view-top"><div class="profile-view-text">profile window</div></div>
+</div>
+<div class="profile-view">
+	Say hello to...
+	 
+</div>
+</div>
+<div class="chat-view-container">
+<div class="chat-view-top-super">
+<div class="chat-view-top"><div class="chat-view-text">chat window</div></div>
+</div>
 <div class="chat-view" id="chat-view"></div>
+</div>
 <%= periodically_call_remote(:url => "messages/get/#{current_user.chat_id}", :frequency => '.5', :update => 'chat-view', :condition => "$('chatid').innerHTML == '#{current_user.chat_id}'" )%>
 <div id="chat_form">
 <% form_remote_tag :url => {:controller => "messages", :action => "create_new"} do	-%>
 <%= hidden_field_tag :user_id, current_user.id %>
 <%= hidden_field_tag :chat_id, current_user.chat_id %>
-<%= text_field_tag :body %>
-<%= submit_tag 'Send' %>
+<div class="chat-box-div">
+<input id="body" name="body" type="text" class="chat-box">
+</div>
+<div class="send-div">
+<input name="commit" type="submit" value="send" class="send">
+</div>
 <% end -%>
 </div>
 <div class="chatid" id="chatid" style="display: none;"><%= current_user.chat_id %></div>
 <div id="errors">
 </div>
+

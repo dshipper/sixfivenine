@@ -16,10 +16,13 @@ class ChatsController < ApplicationController
     #first look for chats
     #@chats = Chats.find :all, :conditions => {:waiting => 1} 
     @chat = nil
+    @chatting_with = nil
     @chat = Chat.find_by_waiting true
     if @chat != nil
       @chat.waiting = false
+      @chat.user_two = current_user.id
       @chat.save
+      @chatting_with = @chat.user_one
       current_user.chat_id = @chat.id
       m = Message.new :body => "#{current_user.first_name} has joined the chat.", :user_id => current_user.id, :chat_id => current_user.chat_id, :system => true
       m.save
@@ -27,6 +30,7 @@ class ChatsController < ApplicationController
       #then we have to create a new chat
       @chat = Chat.new
       @chat.waiting = true 
+      @chat.user_one = current_user.id
       @chat.save
       current_user.chat_id = @chat.id
       m = Message.new :body => "#{current_user.first_name} has joined the chat.", :user_id => current_user.id, :chat_id => current_user.chat_id, :system => true
