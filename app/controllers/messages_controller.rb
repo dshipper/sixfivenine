@@ -49,12 +49,6 @@ class MessagesController < ApplicationController
     @message.save
   end
   
-  def get
-    if @last_message
-      @messages = Message.find(:all, :conditions => {:chat_id => params[:id], :id_gt => @last_message })
-    else
-      @messages = Message.find(:all, :conditions => {:chat_id => params[:id]})
-    end
-  end
+  
 
 end

@@ -1,1 +1,5 @@
-Iteration two includes the final chat system and chat view including profile views 
+Iteration two includes the final chat system and chat view including profile views=
+
+TODO:
+	Make the system only get messages that it hasn't already downloaded to reduce server and bandwidth load
+	Get profile viewing to work nicely and look nice
